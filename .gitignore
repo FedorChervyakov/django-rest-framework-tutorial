@@ -1,4 +1,13 @@
+# Environment
+.env
+
+# Poetry
 poetry.lock
 
+# Python
 __pycache__/
 *.pyc
+
+# Django
+migrations/
+!migrations/__init__.py
