@@ -76,10 +76,17 @@ WSGI_APPLICATION = 'tutorial.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+POSTGRES_DB = os.environ['POSTGRES_DB']
+POSTGRES_USER = os.environ['POSTGRES_USER']
+POSTGRES_PASS = os.environ['POSTGRES_PASSWORD']
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': f'{POSTGRES_DB}',
+        'USER': f'{POSTGRES_USER}',
+        'PASSWORD': f'{POSTGRES_PASS}',
+        'HOST': 'db',
     }
 }
 
